@@ -53,6 +53,7 @@ cp -r $HOME/bsdrice/.local/share/* $HOME/.local/share &&
 	cp $HOME/bsdrice/.bashrc $HOME/.bashrc &&
 	cp $HOME/bsdrice/.inputrc $HOME/.inputrc &&
 	cp $HOME/bsdrice/.xsession $HOME/.xsession &&
+	cp $HOME/bsdrice/.xinitrc $HOME/.xinitrc &&
 
 cat << "EOF"
 
