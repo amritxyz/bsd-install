@@ -11,10 +11,11 @@ EOF
 
 # Install essential packages
 doas pkg_add harfbuzz \
-	ffmpeg xwallpaper htop xclip xdotool lf adwaita-icon-theme \
-	firefox nsxiv neovim mpv newsraft xdg-user-dirs \
+	ffmpeg xwallpaper btop xclip xdotool lf adwaita-icon-theme \
+	firefox nsxiv neovim mpv newsraft xdg-user-dirs cmixer \
 	unzip zathura zathura-pdf-poppler scrot \
-	rust go ripgrep hugo wget transmission
+	rust go ripgrep hugo wget transmission \
+	ubuntu-nerd-fonts
 
 # gimp obs xf86-video-intel
 # wget nodejs
@@ -77,10 +78,10 @@ doas make -C ~/.local/src/bsd-dwm/dmenu/ clean install
 doas make -C ~/.local/src/bsd-dwm/st/ clean install
 doas make -C ~/.local/src/bsd-dwm/slstatus/ clean install
 
-# Better performance
-doas mkdir -p /etc/X11/xorg.conf.d/
-doas cp $HOME/bsdrice/.local/share/20-intel.conf /etc/X11/xorg.conf.d/
+# doas mkdir -p /etc/X11/xorg.conf.d/
+# doas cp $HOME/bsdrice/.local/share/20-intel.conf /etc/X11/xorg.conf.d/
 doas cp $HOME/bsdrice/.local/share/hosts /etc/hosts
+doas cp $HOME/bsdrice/.local/share/hostname.iwm0 /etc/hostname.iwm0
 
 # Clean home directory
 mkdir -p $HOME/.local/git-repos
