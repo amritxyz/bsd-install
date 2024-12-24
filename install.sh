@@ -91,6 +91,9 @@ mv $HOME/bsd-install $HOME/.local/git-repos
 # doas rm -rf /usr/X11R6/share/X11/xorg.conf.d/70-synaptics.conf
 doas rm -rf /usr/X11R6/share/X11/xorg.conf.d/*
 
+echo "Changing shell to bash"
+doas chsh -s /usr/local/bin/bash
+
 # mkdir -p $HOME/.cache
 # doas chown void:void $HOME/.cache
 
