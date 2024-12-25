@@ -15,7 +15,7 @@ doas pkg_add harfbuzz \
 	firefox nsxiv neovim mpv newsraft xdg-user-dirs cmixer \
 	unzip zathura zathura-pdf-poppler scrot \
 	rust go ripgrep hugo wget transmission \
-	ubuntu-nerd-fonts
+	ubuntu-nerd-fonts neofetch bash
 
 # gimp obs xf86-video-intel
 # wget nodejs
@@ -94,6 +94,9 @@ doas rm -rf /usr/X11R6/share/X11/xorg.conf.d/*
 
 echo "Changing shell to bash"
 doas chsh -s /usr/local/bin/bash
+
+echo "void in sound group"
+doas usermod -G _sndio void
 
 # mkdir -p $HOME/.cache
 # doas chown void:void $HOME/.cache
