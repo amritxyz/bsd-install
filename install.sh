@@ -11,12 +11,13 @@ EOF
 
 # Install essential packages
 doas pkg_add harfbuzz \
-	ffmpeg xwallpaper btop xclip xdotool lf adwaita-icon-theme \
-	firefox nsxiv neovim mpv newsraft xdg-user-dirs cmixer \
+	ffmpeg xwallpaper htop xclip xdotool lf adwaita-icon-theme \
+	firefox nsxiv neovim mpv newsraft cmixer \
 	unzip zathura zathura-pdf-poppler scrot \
 	rust go ripgrep hugo wget transmission \
-	ubuntu-nerd-fonts neofetch bash
-
+	ubuntu-nerd-fonts neofetch intel-media-driver \
+	bash
+# xdg-user-dirs xdg-utils
 # gimp obs xf86-video-intel
 # wget nodejs
 # font-hack-ttf
@@ -63,11 +64,6 @@ cat << "EOF"
  *							    *
  ************************************************************
  */
-  ___         _        _ _ _             ___         _   _             ___       __ _
- |_ _|_ _  __| |_ __ _| | (_)_ _  __ _  / __|_  _ __| |_| |___ ______ / __| ___ / _| |___ __ ____ _ _ _ ___ ___
-  | || ' \(_-<  _/ _` | | | | ' \/ _` | \__ \ || / _| / / / -_|_-<_-< \__ \/ _ \  _|  _\ V  V / _` | '_/ -_|_-<
- |___|_||_/__/\__\__,_|_|_|_|_||_\__, | |___/\_,_\__|_\_\_\___/__/__/ |___/\___/_|  \__|\_/\_/\__,_|_| \___/__/
-                                 |___/
 
 EOF
 
@@ -90,13 +86,25 @@ mv $HOME/bsdrice $HOME/.local/git-repos
 mv $HOME/bsd-install $HOME/.local/git-repos
 
 # doas rm -rf /usr/X11R6/share/X11/xorg.conf.d/70-synaptics.conf
-doas rm -rf /usr/X11R6/share/X11/xorg.conf.d/*
+# doas rm -rf /usr/X11R6/share/X11/xorg.conf.d/*
 
 echo "Changing shell to bash"
 doas chsh -s /usr/local/bin/bash
 
 echo "void in sound group"
 doas usermod -G _sndio void
+
+# Performance improvements
+doas rcctl enable apmd
+doas rcctl set apmd status on
+doas rcctl set apmd flags -H
+
+# fstab
+sed '/\.a \/ ffs rw/ s/\(rw\)/\1,softdep/' "/etc/fstab" > "$HOME/fstab"
+doas cp $HOME/fstab /etc/fstab
+
+# firefox
+doas sed -i "s|^~/Downloads rwc$|~/.local/dl rwc|" /usr/local/lib/firefox/browser/defaults/preferences/unveil.main
 
 # mkdir -p $HOME/.cache
 # doas chown void:void $HOME/.cache
