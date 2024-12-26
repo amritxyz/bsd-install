@@ -99,9 +99,11 @@ doas usermod -G _sndio void
 doas rcctl enable apmd
 doas rcctl set apmd status on
 doas rcctl set apmd flags -H
+doas usermod -L staff void
+doas usermod -G staff void
 
 # fstab
-sed '/\.a \/ ffs rw/ s/\(rw\)/\1,softdep/' "/etc/fstab" > "$HOME/fstab"
+sed '/\.a \/ ffs rw/ s/\(rw\)\(,softdep\)\?/\1,softdep/' "/etc/fstab" > "$HOME/fstab"
 doas cp $HOME/fstab /etc/fstab
 
 # firefox
