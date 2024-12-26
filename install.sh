@@ -51,10 +51,8 @@ git clone --depth=1 https://gitlab.com/NyxVoid/void-wall.git/ $HOME/.local/share
 cp -r $HOME/bsdrice/.local/share/* $HOME/.local/share &&
 	cp -r $HOME/bsdrice/.local/bin/* $HOME/.local/bin &&
 	cp -r $HOME/bsdrice/.config/* $HOME/.config &&
-	cp $HOME/bsdrice/.bashrc $HOME/.bashrc &&
+	cp $HOME/bsdrice/.kshrc $HOME/.kshrc &&
 	cp $HOME/bsdrice/.profile $HOME/.profile &&
-	cp $HOME/bsdrice/.inputrc $HOME/.inputrc &&
-	cp $HOME/bsdrice/.xsession $HOME/.xsession &&
 	cp $HOME/bsdrice/.xinitrc $HOME/.xinitrc &&
 
 cat << "EOF"
@@ -80,6 +78,7 @@ doas make -C ~/.local/src/bsd-dwm/slstatus/ clean install
 # doas cp $HOME/bsdrice/.local/share/20-intel.conf /etc/X11/xorg.conf.d/
 doas cp $HOME/bsdrice/.local/share/hosts /etc/hosts
 doas cp $HOME/bsdrice/.local/share/hostname.iwm0 /etc/hostname.iwm0
+doas cp $HOME/bsdrice/.local/share/sysctl.conf /etc/sysctl.conf
 
 # Clean home directory
 mkdir -p $HOME/.local/git-repos
