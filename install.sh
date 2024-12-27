@@ -102,8 +102,10 @@ doas usermod -L staff void
 doas usermod -G staff void
 
 # fstab
-sed '/\.a \/ ffs rw/ s/\(rw\)\(,softdep\)\?/\1,softdep/' "/etc/fstab" > "$HOME/fstab"
+sed '/\.a \/ ffs rw/ s/\(rw\)/\1,softdep/' "/etc/fstab" > "$HOME/fstab"
 doas cp $HOME/fstab /etc/fstab
+cat /etc/fstab
+sleep 3
 
 # firefox
 # doas sed -i "s|^~/Downloads rwc$|~/.local/dl rwc|" /usr/local/lib/firefox/browser/defaults/preferences/unveil.main
