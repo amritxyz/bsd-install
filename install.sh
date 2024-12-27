@@ -15,8 +15,7 @@ doas pkg_add harfbuzz \
 	firefox nsxiv neovim mpv newsraft cmixer \
 	unzip zathura zathura-pdf-poppler scrot \
 	rust go ripgrep hugo wget transmission \
-	ubuntu-nerd-fonts neofetch intel-media-driver \
-	bash
+	ubuntu-nerd-fonts screenfetch intel-media-driver
 # xdg-user-dirs xdg-utils
 # gimp obs xf86-video-intel
 # wget nodejs
@@ -88,9 +87,6 @@ mv $HOME/bsd-install $HOME/.local/git-repos
 # doas rm -rf /usr/X11R6/share/X11/xorg.conf.d/70-synaptics.conf
 # doas rm -rf /usr/X11R6/share/X11/xorg.conf.d/*
 
-echo "Changing shell to bash"
-doas chsh -s /usr/local/bin/bash
-
 echo "void in sound group"
 doas usermod -G _sndio void
 
@@ -106,7 +102,7 @@ sed '/\.a \/ ffs rw/ s/\(rw\)\(,softdep\)\?/\1,softdep/' "/etc/fstab" > "$HOME/f
 doas cp $HOME/fstab /etc/fstab
 
 # firefox
-doas sed -i "s|^~/Downloads rwc$|~/.local/dl rwc|" /usr/local/lib/firefox/browser/defaults/preferences/unveil.main
+# doas sed -i "s|^~/Downloads rwc$|~/.local/dl rwc|" /usr/local/lib/firefox/browser/defaults/preferences/unveil.main
 
 # mkdir -p $HOME/.cache
 # doas chown void:void $HOME/.cache
