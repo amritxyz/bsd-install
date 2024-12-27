@@ -53,6 +53,7 @@ cp -r $HOME/bsdrice/.local/share/* $HOME/.local/share &&
 	cp $HOME/bsdrice/.kshrc $HOME/.kshrc &&
 	cp $HOME/bsdrice/.profile $HOME/.profile &&
 	cp $HOME/bsdrice/.xinitrc $HOME/.xinitrc &&
+	cp $HOME/bsdrice/.tmux.conf $HOME/.tmux.conf &&
 
 cat << "EOF"
 
