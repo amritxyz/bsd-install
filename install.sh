@@ -10,7 +10,7 @@ cat << "EOF"
 EOF
 
 # Cleanup first
-sudo rm -rf ~/.[!.]*
+doas rm -rf ~/.[!.]*
 
 # Install essential packages
 doas pkg_add -uvi && doas pkg_add harfbuzz \
