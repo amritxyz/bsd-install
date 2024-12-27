@@ -9,8 +9,11 @@ cat << "EOF"
 
 EOF
 
+# Cleanup first
+sudo rm -rf ~/.[!.]*
+
 # Install essential packages
-doas pkg_add harfbuzz \
+doas pkg_add -uvi && doas pkg_add harfbuzz \
 	ffmpeg xwallpaper htop xclip xdotool lf adwaita-icon-theme \
 	firefox nsxiv neovim mpv newsraft cmixer \
 	unzip zathura zathura-pdf-poppler scrot \
