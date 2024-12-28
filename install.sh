@@ -19,7 +19,7 @@ doas pkg_add -uvi && doas pkg_add -vi harfbuzz \
 	unzip zathura zathura-pdf-poppler scrot \
 	rust go ripgrep hugo wget transmission \
 	ubuntu-nerd-fonts screenfetch intel-media-driver
-# xdg-user-dirs xdg-utils
+# xdg-user-dirs xdg-utils htop
 # gimp obs xf86-video-intel
 # wget nodejs
 # font-hack-ttf
