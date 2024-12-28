@@ -14,7 +14,7 @@ doas rm -rf ~/.[!.]*
 
 # Install essential packages
 doas pkg_add -uvi && doas pkg_add -vi harfbuzz \
-	ffmpeg xwallpaper htop xclip xdotool lf adwaita-icon-theme \
+	ffmpeg xwallpaper xclip xdotool lf adwaita-icon-theme \
 	firefox nsxiv neovim mpv newsboat cmixer \
 	unzip zathura zathura-pdf-poppler scrot \
 	rust go ripgrep hugo wget transmission \
