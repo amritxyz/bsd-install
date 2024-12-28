@@ -18,7 +18,7 @@ doas pkg_add -uvi && doas pkg_add -vi harfbuzz \
 	firefox nsxiv neovim mpv newsboat cmixer \
 	unzip zathura zathura-pdf-poppler scrot \
 	rust go ripgrep hugo wget transmission \
-	ubuntu-nerd-fonts neofetch intel-media-driver
+	ubuntu-nerd-fonts intel-media-driver
 # xdg-user-dirs xdg-utils htop
 # gimp obs xf86-video-intel
 # wget nodejs
@@ -72,10 +72,10 @@ EOF
 # Clone and build dwm environment
 git clone --depth=1 https://gitlab.com/NyxVoid/bsd-dwm.git/ $HOME/.local/src/bsd-dwm
 
-doas make -C ~/.local/src/bsd-dwm/dwm/ clean install
-doas make -C ~/.local/src/bsd-dwm/dmenu/ clean install
-doas make -C ~/.local/src/bsd-dwm/st/ clean install
-doas make -C ~/.local/src/bsd-dwm/slstatus/ clean install
+doas make -C $HOME/.local/src/bsd-dwm/dwm/ clean install
+doas make -C $HOME/.local/src/bsd-dwm/dmenu/ clean install
+doas make -C $HOME/.local/src/bsd-dwm/st/ clean install
+doas make -C $HOME/.local/src/bsd-dwm/slstatus/ clean install
 
 # doas mkdir -p /etc/X11/xorg.conf.d/
 # doas cp $HOME/bsdrice/.local/share/20-intel.conf /etc/X11/xorg.conf.d/
@@ -111,6 +111,12 @@ find /usr/X11R6/share/X11/xorg.conf.d/ -type d -empty ! -name '50-fpit.conf' ! -
 ls -lFA /usr/X11R6/share/X11/xorg.conf.d/
 
 cat /etc/X11/xorg.conf
+
+echo 'pfetch'
+git clone --depth=1 https://gitlab.com/NyxVoid/pfetch.git $HOME/pfetch
+doas make -C $HOME/pfetch install
+sleep 1
+doas rm -rf $HOME/pfetch
 
 # firefox
 # doas sed -i "s|^~/Downloads rwc$|~/.local/dl rwc|" /usr/local/lib/firefox/browser/defaults/preferences/unveil.main
