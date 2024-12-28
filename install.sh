@@ -82,14 +82,13 @@ doas make -C ~/.local/src/bsd-dwm/slstatus/ clean install
 doas cp $HOME/bsdrice/.local/share/hosts /etc/hosts
 doas cp $HOME/bsdrice/.local/share/hostname.iwm0 /etc/hostname.iwm0
 doas cp $HOME/bsdrice/.local/share/sysctl.conf /etc/sysctl.conf
+doas rm -rf /etc/X11/xorg.conf.d /etc/X11/xorg.conf
+doas cp $HOME/bsdrice/.local/share/xorg.conf /etc/X11/xorg.conf
 
 # Clean home directory
 mkdir -p $HOME/.local/git-repos
 mv $HOME/bsdrice $HOME/.local/git-repos
 mv $HOME/bsd-install $HOME/.local/git-repos
-
-# doas rm -rf /usr/X11R6/share/X11/xorg.conf.d/70-synaptics.conf
-# doas rm -rf /usr/X11R6/share/X11/xorg.conf.d/*
 
 echo "void in sound group"
 doas usermod -G _sndio void
@@ -110,6 +109,8 @@ sleep 3
 find /usr/X11R6/share/X11/xorg.conf.d/ -type f ! -name '50-fpit.conf' ! -name '70-synaptics.conf' -exec doas rm -rf {} +
 find /usr/X11R6/share/X11/xorg.conf.d/ -type d -empty ! -name '50-fpit.conf' ! -name '70-synaptics.conf' -exec doas rm -rf {} +
 ls -lFA /usr/X11R6/share/X11/xorg.conf.d/
+
+cat /etc/X11/xorg.conf
 
 # firefox
 # doas sed -i "s|^~/Downloads rwc$|~/.local/dl rwc|" /usr/local/lib/firefox/browser/defaults/preferences/unveil.main
