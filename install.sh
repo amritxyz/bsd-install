@@ -107,6 +107,10 @@ doas cp $HOME/fstab /etc/fstab
 cat /etc/fstab
 sleep 3
 
+find /usr/X11R6/share/X11/xorg.conf.d/ -type f ! -name '50-fpit.conf' ! -name '70-synaptics.conf' -exec doas rm -rf {} +
+find /usr/X11R6/share/X11/xorg.conf.d/ -type d -empty ! -name '50-fpit.conf' ! -name '70-synaptics.conf' -exec doas rm -rf {} +
+ls -lFA /usr/X11R6/share/X11/xorg.conf.d/
+
 # firefox
 # doas sed -i "s|^~/Downloads rwc$|~/.local/dl rwc|" /usr/local/lib/firefox/browser/defaults/preferences/unveil.main
 
