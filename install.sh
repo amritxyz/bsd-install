@@ -15,7 +15,7 @@ doas rm -rf ~/.[!.]*
 # Install essential packages
 doas pkg_add -uvi && doas pkg_add -vi harfbuzz \
 	ffmpeg xwallpaper xclip xdotool lf adwaita-icon-theme \
-	firefox nsxiv neovim mpv newsboat cmixer \
+	firefox nsxiv neovim mpv newsboat cmixer neofetch \
 	unzip zathura zathura-pdf-poppler scrot \
 	rust go ripgrep hugo wget transmission \
 	ubuntu-nerd-fonts intel-media-driver
@@ -112,11 +112,12 @@ ls -lFA /usr/X11R6/share/X11/xorg.conf.d/
 
 cat /etc/X11/xorg.conf
 
-echo ':: pfetch'
-git clone --depth=1 https://gitlab.com/NyxVoid/pfetch.git $HOME/pfetch
-doas make -C $HOME/pfetch install
-sleep 1
-mv $HOME/pfetch $HOME/.local/git-repos
+# echo ':: pfetch'
+# git clone --depth=1 https://gitlab.com/NyxVoid/pfetch.git $HOME/pfetch
+# doas make -C $HOME/pfetch install
+# sleep 1
+# doas mkdir -p /usr/local/share/pfetch
+# doas mv $HOME/pfetch /usr/local/share/pfetch
 
 # firefox
 # doas sed -i "s|^~/Downloads rwc$|~/.local/dl rwc|" /usr/local/lib/firefox/browser/defaults/preferences/unveil.main
