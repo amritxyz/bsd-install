@@ -15,7 +15,7 @@ doas rm -rf ~/.[!.]*
 # Install essential packages
 doas pkg_add -uvi && doas pkg_add -vi harfbuzz \
 	ffmpeg xwallpaper xclip xdotool lf adwaita-icon-theme \
-	firefox nsxiv neovim mpv newsboat cmixer neofetch \
+	firefox nsxiv neovim mpv newsboat cmixer \
 	unzip zathura zathura-pdf-poppler scrot \
 	rust go ripgrep hugo wget transmission \
 	ubuntu-nerd-fonts intel-media-driver
@@ -111,6 +111,12 @@ find /usr/X11R6/share/X11/xorg.conf.d/ -type d -empty ! -name '50-fpit.conf' ! -
 ls -lFA /usr/X11R6/share/X11/xorg.conf.d/
 
 cat /etc/X11/xorg.conf
+
+echo 'pfetch'
+git clone --depth=1 https://gitlab.com/NyxVoid/pfetch.git $HOME/pfetch
+doas make -C $HOME/pfetch install
+sleep 1
+doas rm -rf $HOME/pfetch
 
 # firefox
 # doas sed -i "s|^~/Downloads rwc$|~/.local/dl rwc|" /usr/local/lib/firefox/browser/defaults/preferences/unveil.main
