@@ -116,7 +116,7 @@ echo 'pfetch'
 git clone --depth=1 https://gitlab.com/NyxVoid/pfetch.git $HOME/pfetch
 doas make -C $HOME/pfetch install
 sleep 1
-doas rm -rf $HOME/pfetch
+mv $HOME/pfetch $HOME/.local/git-repos
 
 # firefox
 # doas sed -i "s|^~/Downloads rwc$|~/.local/dl rwc|" /usr/local/lib/firefox/browser/defaults/preferences/unveil.main
