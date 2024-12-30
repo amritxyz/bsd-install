@@ -114,7 +114,6 @@ cat /etc/X11/xorg.conf
 
 # echo ':: pfetch'
 # git clone --depth=1 https://gitlab.com/NyxVoid/pfetch.git $HOME/pfetch
-# doas make -C $HOME/pfetch install
 # sleep 1
 # doas mkdir -p /usr/local/share/pfetch
 # doas mv $HOME/pfetch /usr/local/share/pfetch
