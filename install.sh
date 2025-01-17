@@ -24,7 +24,7 @@ doas pkg_add -uvi && doas pkg_add -vi harfbuzz \
 # wget nodejs
 # font-hack-ttf
 # Create necessary directories
-mkdir -p $HOME/.local/share $HOME/.config $HOME/.local/src $HOME/.local/bin $HOME/.local/hugo-dir $HOME/.local/dox $HOME/.local/vids
+mkdir -p $HOME/.local/share $HOME/.config $HOME/.local/src $HOME/.local/bin $HOME/.local/hugo-dir $HOME/.local/dox $HOME/.local/vids $HOME/.local/music $HOME/.local/audio
 
 # Copy configuration files
 cat << "EOF"
