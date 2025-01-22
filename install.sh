@@ -17,8 +17,9 @@ doas pkg_add -uvi && doas pkg_add -vi harfbuzz \
 	ffmpeg xwallpaper xclip xdotool lf adwaita-icon-theme \
 	firefox nsxiv neovim mpv newsboat cmixer neofetch \
 	unzip zathura zathura-pdf-poppler scrot \
-	rust go ripgrep hugo wget deluge \
-	intel-media-driver terminus-nerd-fonts
+	ripgrep hugo wget deluge \
+	intel-media-driver terminus-nerd-fonts \
+	rust go jdk-21.0.4.7.1v0
 # xdg-user-dirs xdg-utils htop
 # gimp obs xf86-video-intel
 # wget nodejs
