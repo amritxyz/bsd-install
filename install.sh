@@ -19,6 +19,7 @@ doas pkg_add -uvi && doas pkg_add -vi harfbuzz \
 	unzip zathura zathura-pdf-poppler scrot \
 	ripgrep hugo wget deluge git-lfs \
 	intel-media-driver terminus-nerd-fonts \
+	cmatrix \
 	rust go jdk-21.0.4.7.1v0
 # xdg-user-dirs xdg-utils htop
 # gimp obs xf86-video-intel
