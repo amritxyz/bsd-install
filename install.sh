@@ -96,9 +96,9 @@ echo "void in sound group"
 doas usermod -G _sndio void
 
 # Performance improvements
-doas rcctl enable apmd
-doas rcctl set apmd status on
-doas rcctl set apmd flags -H
+doas rcctl disable apmd
+doas rcctl set apmd status off
+# doas rcctl set apmd flags -H
 doas usermod -L staff void
 doas usermod -G staff void
 
