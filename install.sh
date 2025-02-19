@@ -15,11 +15,11 @@ doas rm -rf ~/.[!.]*
 # Install essential packages
 doas pkg_add -uvi && doas pkg_add -vi harfbuzz \
 	ffmpeg xwallpaper xclip xdotool lf adwaita-icon-theme \
-	firefox nsxiv neovim newsboat cmixer neofetch mpv \
-	unzip zathura zathura-pdf-poppler scrot ImageMagick \
-	ripgrep hugo wget deluge git-lfs fzf \
-	intel-vaapi-driver libva-utils terminus-nerd-fonts \
-	rust go jdk-21.0.4.7.1v0
+	firefox nsxiv neovim cmixer neofetch \
+	unzip scrot ImageMagick \
+	ripgrep wget deluge git-lfs fzf \
+	intel-vaapi-driver libva-utils terminus-nerd-fonts
+# rust go jdk-21.0.4.7.1v0
 # htop cmatrix
 # gimp obs xf86-video-intel
 # xdg-utils xdg-user-dirs
@@ -81,8 +81,8 @@ doas make -C $HOME/.local/src/bsd-dwm/slstatus/ clean install
 
 # doas mkdir -p /etc/X11/xorg.conf.d/
 # doas cp $HOME/bsdrice/.local/share/20-intel.conf /etc/X11/xorg.conf.d/
+# doas cp $HOME/bsdrice/.local/share/hostname.iwm0 /etc/hostname.iwm0
 doas cp $HOME/bsdrice/.local/share/hosts /etc/hosts
-doas cp $HOME/bsdrice/.local/share/hostname.iwm0 /etc/hostname.iwm0
 doas cp $HOME/bsdrice/.local/share/sysctl.conf /etc/sysctl.conf
 doas rm -rf /etc/X11/xorg.conf.d /etc/X11/xorg.conf
 doas cp $HOME/bsdrice/.local/share/xorg.conf /etc/X11/xorg.conf
