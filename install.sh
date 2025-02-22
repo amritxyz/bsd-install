@@ -17,11 +17,12 @@ doas pkg_add -uvi && doas pkg_add -vi harfbuzz \
 	ffmpeg xwallpaper xclip xdotool lf adwaita-icon-theme \
 	firefox nsxiv neovim newsboat cmixer neofetch mpv \
 	unzip zathura zathura-pdf-poppler scrot ImageMagick \
-	ripgrep hugo wget deluge git-lfs fzf \
+	ripgrep hugo wget deluge git-lfs fzf cmatrix \
 	intel-vaapi-driver libva-utils terminus-nerd-fonts \
-	rust go jdk-21.0.4.7.1v0
+	rust go jdk-21.0.4.7.1v0 clang-tools-extra \
+	py3-python-lsp-server
 
-# htop cmatrix
+# htop
 # gimp obs xf86-video-intel
 # xdg-utils xdg-user-dirs
 # wget nodejs
