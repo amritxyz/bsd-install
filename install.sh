@@ -19,8 +19,8 @@ doas pkg_add -uvi && doas pkg_add -vi harfbuzz \
 	unzip zathura zathura-pdf-poppler scrot ImageMagick \
 	ripgrep hugo wget deluge git-lfs fzf cmatrix \
 	intel-vaapi-driver libva-utils terminus-nerd-fonts \
-	rust-analyzer go jdk-21.0.4.7.1v0 clang-tools-extra
-
+	rust go jdk-21.0.4.7.1v0
+# rust-analyzer clang-tools-extra
 # py3-python-lsp-server
 # htop
 # gimp obs xf86-video-intel
