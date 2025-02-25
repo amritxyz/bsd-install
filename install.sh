@@ -43,16 +43,16 @@ cat << "EOF"
 EOF
 
 # NeoVim
-git clone --depth=1 https://gitlab.com/amritxyz/nvim.git $HOME/.config/nvim
+git clone --depth=1 https://github.com/amritxyz/nvim.git $HOME/.config/nvim
 
 # Dev
-git clone --depth=1 https://gitlab.com/amritxyz/dev.git/ $HOME/.local/dev
+git clone --depth=1 https://github.com/amritxyz/dev.git/ $HOME/.local/dev
 
 # Clone dotfiles repository
-git clone --depth=1 https://gitlab.com/amritxyz/bsdrice.git/ $HOME/bsdrice
+git clone --depth=1 https://github.com/amritxyz/bsdrice.git/ $HOME/bsdrice
 
 # Clone walls
-git clone --depth=1 https://gitlab.com/amritxyz/void-wall.git/ $HOME/.local/share/void-wall
+git clone --depth=1 https://github.com/amritxyz/void-wall.git/ $HOME/.local/share/void-wall
 
 cp -r $HOME/bsdrice/.local/share/* $HOME/.local/share &&
 	cp -r $HOME/bsdrice/.local/bin/* $HOME/.local/bin &&
@@ -74,7 +74,7 @@ cat << "EOF"
 EOF
 
 # Clone and build dwm environment
-git clone --depth=1 https://gitlab.com/amritxyz/bsd-dwm.git/ $HOME/.local/src/bsd-dwm
+git clone --depth=1 https://github.com/amritxyz/bsd-dwm.git/ $HOME/.local/src/bsd-dwm
 
 doas make -C $HOME/.local/src/bsd-dwm/dwm/ clean install
 doas make -C $HOME/.local/src/bsd-dwm/dmenu/ clean install
@@ -117,7 +117,7 @@ ls -lFA /usr/X11R6/share/X11/xorg.conf.d/
 cat /etc/X11/xorg.conf
 
 # echo ':: pfetch'
-# git clone --depth=1 https://gitlab.com/amritxyz/pfetch.git $HOME/pfetch
+# git clone --depth=1 https://github.com/amritxyz/pfetch.git $HOME/pfetch
 # sleep 1
 # doas mkdir -p /usr/local/share/pfetch
 # doas mv $HOME/pfetch /usr/local/share/pfetch
