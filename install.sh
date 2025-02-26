@@ -20,7 +20,8 @@ doas pkg_add -uvi && doas pkg_add -vi harfbuzz \
 	ripgrep hugo wget deluge git-lfs fzf cmatrix \
 	intel-vaapi-driver libva-utils terminus-nerd-fonts \
 	rust go jdk-21.0.4.7.1v0
-# rust-analyzer clang-tools-extra
+# clang-tools-extra
+# rust-analyzer
 # py3-python-lsp-server
 # htop
 # gimp obs xf86-video-intel
