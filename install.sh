@@ -15,16 +15,16 @@ doas rm -rf ~/.[!.]*
 # Install essential packages
 doas pkg_add -uvi && doas pkg_add -vi harfbuzz \
 	ffmpeg xwallpaper xclip xdotool lf adwaita-icon-theme \
-	firefox nsxiv neovim newsboat cmixer neofetch mpv \
+	firefox nsxiv neovim cmixer neofetch mpv \
 	unzip zathura zathura-pdf-poppler scrot ImageMagick \
 	ripgrep hugo wget deluge git-lfs fzf cmatrix \
 	intel-media-driver libva-utils terminus-nerd-fonts \
 	rust go jdk-17.0.12.7.1v0
-# intel-vaapi-driver 
+# intel-vaapi-driver
 # clang-tools-extra
 # rust-analyzer
 # py3-python-lsp-server
-# htop
+# htop newsboat
 # gimp obs xf86-video-intel
 # xdg-utils xdg-user-dirs
 # wget nodejs
