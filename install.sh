@@ -10,22 +10,31 @@ cat << "EOF"
 EOF
 
 # Cleanup first
-doas rm -rf ~/.[!.]*
+printf ":: Would you like to cleanup Home Dir? [y/N] "
+IFS= read -r DLT
+
+if [ "$DLT" = "N" ] || [ "$DLT" = "n" ] || [ -z "$DLT" ]; then
+	echo "Exiting..."
+	break
+else
+	echo "Cleaning..."
+	doas rm -rf "$HOME"/.[!.]* "$HOME"/..?*
+fi
 
 # Install essential packages
 doas pkg_add -uvi && doas pkg_add -vi harfbuzz \
 	ffmpeg xwallpaper xclip xdotool lf adwaita-icon-theme \
 	firefox nsxiv neovim cmixer neofetch mpv \
 	unzip zathura zathura-pdf-poppler scrot ImageMagick \
-	ripgrep hugo wget deluge git-lfs fzf cmatrix \
-	intel-media-driver libva-utils terminus-nerd-fonts \
+	ripgrep hugo wget git-lfs fzf terminus-nerd-fonts \
+	intel-media-driver libva-utils \
 	rust go jdk-17.0.12.7.1v0
 # intel-vaapi-driver
 # clang-tools-extra
 # rust-analyzer
 # py3-python-lsp-server
-# htop newsboat
-# gimp obs xf86-video-intel
+# htop newsboat deluge
+# cmatrix gimp obs xf86-video-intel
 # xdg-utils xdg-user-dirs
 # wget nodejs
 # font-hack-ttf
@@ -44,25 +53,18 @@ cat << "EOF"
 
 EOF
 
-# NeoVim
 git clone --depth=1 https://github.com/amritxyz/nvim.git $HOME/.config/nvim
-
-# Dev
 git clone --depth=1 https://github.com/amritxyz/dev.git/ $HOME/.local/dev
-
-# Clone dotfiles repository
 git clone --depth=1 https://github.com/amritxyz/bsdrice.git/ $HOME/bsdrice
-
-# Clone walls
 git clone --depth=1 https://github.com/amritxyz/void-wall.git/ $HOME/.local/share/void-wall
 
-cp -r $HOME/bsdrice/.local/share/* $HOME/.local/share &&
-	cp -r $HOME/bsdrice/.local/bin/* $HOME/.local/bin &&
-	cp -r $HOME/bsdrice/.config/* $HOME/.config &&
-	cp $HOME/bsdrice/.kshrc $HOME/.kshrc &&
-	cp $HOME/bsdrice/.profile $HOME/.profile &&
-	cp $HOME/bsdrice/.xinitrc $HOME/.xinitrc &&
-	cp $HOME/bsdrice/.tmux.conf $HOME/.tmux.conf &&
+cp -r $HOME/bsdrice/.local/share/* $HOME/.local/share
+cp -r $HOME/bsdrice/.local/bin/* $HOME/.local/bin
+cp -r $HOME/bsdrice/.config/* $HOME/.config
+cp $HOME/bsdrice/.kshrc $HOME/.kshrc
+cp $HOME/bsdrice/.profile $HOME/.profile
+cp $HOME/bsdrice/.xinitrc $HOME/.xinitrc
+cp $HOME/bsdrice/.tmux.conf $HOME/.tmux.conf
 
 cat << "EOF"
 
