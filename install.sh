@@ -28,7 +28,7 @@ doas pkg_add -uvi && doas pkg_add -vi harfbuzz \
 	unzip zathura zathura-pdf-poppler scrot ImageMagick \
 	ripgrep hugo wget git-lfs fzf terminus-nerd-fonts \
 	intel-media-driver libva-utils \
-	rust go jdk-17.0.12.7.1v0
+	rust go jdk-17.0.12.7.1v0 zig
 # intel-vaapi-driver
 # clang-tools-extra
 # rust-analyzer
@@ -109,10 +109,10 @@ doas usermod -L staff void
 doas usermod -G staff void
 
 # fstab
-sed '/\.a \/ ffs rw/ s/\(rw\)/\1,softdep/' "/etc/fstab" > "$HOME/fstab"
-doas cp $HOME/fstab /etc/fstab
-cat /etc/fstab
-sleep 3
+# sed '/\.a \/ ffs rw/ s/\(rw\)/\1,softdep/' "/etc/fstab" > "$HOME/fstab"
+# doas cp $HOME/fstab /etc/fstab
+# cat /etc/fstab
+# sleep 3
 
 # Removes Default Amd Things or Configs
 find /usr/X11R6/share/X11/xorg.conf.d/ -type f ! -name '50-fpit.conf' ! -name '70-synaptics.conf' -exec doas rm -rf {} +
